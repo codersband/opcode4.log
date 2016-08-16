@@ -14,12 +14,12 @@ namespace opcode.log
         {
             try
             {
-                if (!TActorUtils.ShouldLog(entity.EventType))
+                if (!IdentityUtils.ShouldLog(entity.EventType))
                     return null;
 
                 if (string.IsNullOrEmpty(entity.ActorName))
                 {
-                    var identity = TActorUtils.CurrentActor;
+                    var identity = IdentityUtils.CurrentIdentity;
                     if (identity != null)
                     {
                         entity.ActorId = identity.Id;
@@ -34,7 +34,7 @@ namespace opcode.log
                 if (string.IsNullOrEmpty(entity.FormalMessage))
                     entity.FormalMessage = _LogWriterClass == null ? "UNSPECIFIED" : null;
 
-                entity.ServerID = ConfigUtils.ServerID;
+                entity.ServerId = ConfigUtils.ServerId;
 
                 if (entity.EventDate.Year < 2000)
                     entity.EventDate = DateTime.Now;
@@ -61,7 +61,7 @@ namespace opcode.log
                 });
         }
 
-        public static string Error(ulong? actorId, string actorName, string actorType, string msg, params object[] args)
+        public static string Error(long? actorId, string actorName, string actorType, string msg, params object[] args)
         {
             return AddEvent(new LogEntity
             {
@@ -93,7 +93,7 @@ namespace opcode.log
             });
         }
 
-        public static string Critical(LogTarget target, ulong? actorId, string actorName, string actorType, string msg, params object[] args)
+        public static string Critical(LogTarget target, long? actorId, string actorName, string actorType, string msg, params object[] args)
         {
             return AddEvent(new LogEntity
             {
@@ -126,7 +126,7 @@ namespace opcode.log
             });
         }
 
-        public static string Info(ulong? actorId, string actorName, string actorType, string msg, params object[] args)
+        public static string Info(long? actorId, string actorName, string actorType, string msg, params object[] args)
         {
             return AddEvent(new LogEntity
             {
@@ -157,7 +157,7 @@ namespace opcode.log
             });
         }
 
-        public static string Debug(ulong? actorId, string actorName, string actorType, string msg, params object[] args)
+        public static string Debug(long? actorId, string actorName, string actorType, string msg, params object[] args)
         {
             return AddEvent(new LogEntity
             {
@@ -188,7 +188,7 @@ namespace opcode.log
             });
         }
 
-        public static string Warning(ulong? actorId, string actorName, string actorType, string msg, params object[] args)
+        public static string Warning(long? actorId, string actorName, string actorType, string msg, params object[] args)
         {
             return AddEvent(new LogEntity
             {
