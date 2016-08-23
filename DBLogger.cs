@@ -4,7 +4,7 @@ using opcode4.core.Helpers;
 using opcode4.core.Model.Log;
 using opcode4.utilities;
 
-namespace opcode.log
+namespace opcode4.log
 {
     public static class DBLogger
     {

@@ -3,7 +3,7 @@ using opcode4.core;
 using opcode4.core.Helpers;
 using opcode4.core.Model.Log;
 
-namespace opcode.log
+namespace opcode4.log
 {
     public class DbLogWriter: ILogWriter
     {

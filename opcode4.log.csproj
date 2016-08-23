@@ -7,8 +7,8 @@
     <ProjectGuid>{EAB9A7B7-179A-41B0-8CAA-1B0865DACFF5}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>opcode.log</RootNamespace>
-    <AssemblyName>opcode.log</AssemblyName>
+    <RootNamespace>opcode4.log</RootNamespace>
+    <AssemblyName>opcode4.log</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
